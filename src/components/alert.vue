@@ -1,36 +1,47 @@
 <template>
-    <div class="alert" v-if="show=false">
+    <div class="alert" v-if="show===true">
         <div class="alert-mid">
             <div class="alert-header">
             <div class="alert-left-tips">{{title}}</div>
-            <div class="alert-right-close" @click="show = false">+</div>
+            <div class="alert-right-close" @click="call('close')">+</div>
         </div>
         <div class="alert-content">
             {{content}}
         </div>
-        <div class="alert-button" @click="call">
+        <div class="alert-button" @click="call('btn')">
             确定
         </div>
         </div>
     </div>
 </template>
 <script>
+import { alert } from './controller'
 export default {
-    props: ["title", "content", "callback"],
     data() {
         return {
-            show: false
+            show: false,
+            title:'',
+            content: '',
+            close: '',
+            btn: ''
         }
     },
     created() {
-        setTimeout(() => {
+        alert.show = (title = 'title', content = 'content', close = () => {}, btn = () => {}) => {
+            this.title = title
+            this.content = content
+            this.close = close
+            this.btn = btn
             this.show = true
-        }, 1000)
+        }
+        alert.hide = () => {
+            this.show = false
+        }
     },
     methods: {
-        call() {
-            this.show = false
-            this.callback && this.callback()
+        call(e) {
+            alert.hide();
+            (this[e])()
         }
     },
 }
@@ -43,10 +54,9 @@ export default {
         top: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, .1);
         font-size: .12rem;  
         color: #606266;
-        animation: alert-tran .2s ease;
+        animation: alert-tran .2s ease forwards;
     }
     .alert-mid {
         position: fixed;
@@ -58,8 +68,7 @@ export default {
         border-radius: .04rem;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%) scale(1);
-        animation: alert-mid-tran .2s ease;
+        animation: alert-mid-tran .4s ease forwards;
     }
     @keyframes alert-tran{
         from{

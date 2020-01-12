@@ -1,23 +1,19 @@
 <template>
-    <div class="show">
-        <Alert title="提示" content="alert" :callback= "callback"></Alert>
+    <div>
     </div>
 </template>
 <script>
-import Alert from '../../components/alert'
+import {alert, loading} from '../../components/controller'
 export default {
     name: 'Show',
-    components: {
-        Alert
-    },
     data () {
         return {
         }
     },
+    created() {
+        loading.show()
+    },
     methods: {
-        callback() {
-            alert(1)
-        }
     }
 }
 </script>
