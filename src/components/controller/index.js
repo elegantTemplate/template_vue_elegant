@@ -12,6 +12,18 @@ class Loading {
     show() {}
     hide() {}
 }
+class Toast {
+    /**
+     * @param {string} content 
+     */
+    show(content) {}
+    hide() {}
+}
 const alert = new Alert()
 const loading = new Loading()
-export { alert, loading }
+const toast = new Toast()
+export {
+    alert,
+    loading,
+    toast
+}

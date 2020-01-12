@@ -3,7 +3,7 @@
     </div>
 </template>
 <script>
-import {alert, loading} from '../../components/controller'
+import {alert, loading, toast} from '../../components/controller'
 export default {
     name: 'Show',
     data () {
@@ -11,7 +11,7 @@ export default {
         }
     },
     created() {
-        loading.show()
+        toast.show()
     },
     methods: {
     }

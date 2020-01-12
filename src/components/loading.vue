@@ -54,7 +54,6 @@ export default {
     border-radius: 50%;
     border-top-color: transparent;
     border-left-color: transparent;
-    // transform: rotate(-45deg);
     animation: round-tran .8s linear infinite , show-tran .6s forwards;
   }
 }
@@ -74,29 +73,4 @@ export default {
         opacity: 1;
     }
 }
-// .loading-header {
-//     overflow: hidden;
-// }
-// .loading-left-tips {
-//     float: left;
-//     color: #303133;
-//     font-weight: 500;
-// }
-// .loading-right-close {
-//     float: right;
-//     color: #909399;
-//     transform: rotate(45deg) scale(1.4);
-//     cursor: pointer;
-// }
-// .loading-button {
-//     position: absolute;
-//     right: .1rem;
-//     width: .5rem;
-//     height: .3rem;
-//     line-height: .3rem;
-//     background: #409eff;
-//     color: #fff;
-//     border-radius: .03rem;
-//     text-align: center;
-// }
 </style>
