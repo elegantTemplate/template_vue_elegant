@@ -14,6 +14,12 @@ export default {
     return {};
   },
   created() {
+    var debounce = (func, delay) => {
+
+        var debounceTimer = setTimeout(() => {
+            
+        }, delay)
+    }
     $(window).on("scroll", function() {
         console.log(isReachPageBottom(100))
     });
