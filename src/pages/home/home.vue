@@ -4,7 +4,6 @@
   </div>
 </template>
 <script>
-import { test } from "../../components/utils/api";
 
 export default {
   name: "Home",
@@ -13,9 +12,6 @@ export default {
   },
   created() {
     console.log(LG_CONFIG_API_PREFIX);
-    test().then(res => {
-      console.log(res);
-    });
   },
   methods: {
     toShow() {

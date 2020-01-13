@@ -15,7 +15,7 @@
     </div>
 </template>
 <script>
-import { alert } from './controller'
+import { alert } from '../modules/controller'
 export default {
     data() {
         return {

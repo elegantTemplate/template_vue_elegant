@@ -7,9 +7,9 @@
   </div>
 </template>
 <script>
-import AlertComp from "./components/alert";
-import LoadingComp from "./components/loading";
-import ToastComp from "./components/toast";
+import AlertComp from "./components/eleg-components-global/alert";
+import LoadingComp from "./components/eleg-components-global/loading";
+import ToastComp from "./components/eleg-components-global/toast";
 export default {
   components: {
     AlertComp,

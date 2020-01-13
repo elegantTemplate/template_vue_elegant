@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import { loading } from "./controller";
+import { loading } from "../modules/controller";
 export default {
   data() {
     return {

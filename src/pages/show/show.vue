@@ -1,21 +1,25 @@
 <template>
-    <div>
+  <div>
+    <div class="list">
+      <div class="item" v-for="i in 50" :key="i">111</div>
     </div>
+  </div>
 </template>
 <script>
-import {alert, loading, toast} from '../../components/controller'
+import { isReachPageBottom } from '../../components/modules/utils'
+import $ from "webpack-zepto";
 export default {
-    name: 'Show',
-    data () {
-        return {
-        }
-    },
-    created() {
-        toast.show()
-    },
-    methods: {
-    }
-}
+  name: "Show",
+  data() {
+    return {};
+  },
+  created() {
+    $(window).on("scroll", function() {
+        console.log(isReachPageBottom(100))
+    });
+  },
+  methods: {}
+};
 </script>
 <style lang="scss">
 </style>

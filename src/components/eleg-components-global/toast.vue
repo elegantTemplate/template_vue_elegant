@@ -1,22 +1,22 @@
 <template>
   <div class="toast" v-if="show===true">
     <div class="toast-mid">
-        {{title}}
+        {{content}}
     </div>
   </div>
 </template>
 <script>
-import { toast } from "./controller";
+import { toast, alert } from "../modules/controller";
 export default {
   data() {
     return {
       show: false,
-      title: ''
+      content: ''
     };
   },
   created() {
-    toast.show = (title="title") => {
-      this.title = title
+    toast.show = (content="content") => {
+      this.content = content
       this.show = true;
     };
     toast.hide = () => {

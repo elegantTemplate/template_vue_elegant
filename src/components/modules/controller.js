@@ -5,19 +5,19 @@ class Alert{
      * @param {() => {}} close 
      * @param {() => {}} btn 
      */
-    show(title, content, close, btn) {}
+    show(title, content, close, btn){}
     hide(){}   
 }
 class Loading {
-    show() {}
-    hide() {}
+    show(){}
+    hide(){}
 }
 class Toast {
     /**
      * @param {string} content 
      */
-    show(content) {}
-    hide() {}
+    show(content){}
+    hide(){}
 }
 const alert = new Alert()
 const loading = new Loading()
