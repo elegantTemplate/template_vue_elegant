@@ -37,7 +37,45 @@ const isReachPageBottom = (offset = 0) => {
     const scrollHeight = Math.max(document.documentElement.scrollHeight || 0, document.body.scrollHeight || 0)
     return scrollHeight <= scrollTop + clientHeight + offset
 }
+/**
+ * @param {function} func 
+ * @param {number} delay 
+ */
+const debounce = (func, delay) => {
+    var debounceTimer
+    return (...args) => {
+        const ctx = this
+        clearTimeout(debounceTimer)
+        debounceTimer = setTimeout(() => {
+            func.call(ctx, ...args)
+        }, delay)
+    }
+}   
+/**
+ * @param {function} func 
+ * @param {number} interval 
+ */
+const stable = (func, interval) => {
+    var stableTimer
+    var startTime = new Date()
+    return (...args) => {
+        const nowInterval = new Date() - startTime
+        const ctx = this
+        clearTimeout(stableTimer)
+        if (nowInterval >= interval)
+        {
+            func.call(ctx, ...args)
+            startTime = new Date()
+        }else{
+            stableTimer = setTimeout(() => {
+                func.call(ctx, ...args)
+            }, interval)
+        }
+    }
+}
 export {
     urlParsing,
-    isReachPageBottom
+    isReachPageBottom,
+    debounce,
+    stable
 }
